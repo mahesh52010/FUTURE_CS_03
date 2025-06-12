@@ -9,7 +9,8 @@ app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Needed for session management
 
 # MongoDB connection
-client = MongoClient("mongodb+srv://maheshyandrapu78:Mahesh%401234@mahesh.zit48.mongodb.net/?retryWrites=true&w=majority&appName=Mahesh")
+
+client = MongoClient("mongodb+srv://<username>:<password>@cluster0.abcde.mongodb.net/<dbname>?retryWrites=true&w=majority")
 db = client['user_db']
 users_collection = db['users']
 files_collection = db['files']
