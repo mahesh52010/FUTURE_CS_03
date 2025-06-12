@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Download Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Download Files</h1>
+        <div class="download-container">
+        {% if files %}
+            <ul>
+    {% for file in files %}
+        <li>
+            <a href="{{ url_for('download_file_by_id', file_id=file._id) }}">{{ file.filename }}</a>
+            &nbsp;&nbsp;
+            <a href="{{ url_for('delete_file', file_id=file._id) }}" onclick="return confirm('Are you sure you want to delete this file?');" style="color: #e53e3e; font-weight: 700; text-decoration: none;">Delete</a>
+        </li>
+    {% endfor %}
+            </ul>
+        {% else %}
+            <p>No files available for download.</p>
+        {% endif %}
+        <p><a href="{{ url_for('dashboard') }}">Back to Dashboard</a></p>
+        </div>
+    </div>
+</body>
+</html>

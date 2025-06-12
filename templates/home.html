@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Welcome</h1>
+        <div class="home-container" style="justify-content: space-between; display: flex;">
+            <div class="home-box" style="width: 100%; border: 1px solid #ccc; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <a href="{{ url_for('signin') }}">Sign In</a>
+            </div>
+            <div class="home-box" style="width: 100%; border: 1px solid #ccc; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <a href="{{ url_for('signup') }}">Sign Up</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

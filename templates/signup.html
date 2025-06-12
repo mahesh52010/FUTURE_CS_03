@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Signup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Signup</h1>
+        {% if error %}
+            <p style="color: red; text-align: center;">{{ error }}</p>
+        {% endif %}
+        <form method="POST" action="{{ url_for('signup') }}">
+            <label for="username">Username:</label><br />
+            <input type="text" id="username" name="username" value="{{ username|default('') }}" required /><br />
+            <label for="name">Name:</label><br />
+            <input type="text" id="name" name="name" value="{{ name|default('') }}" required /><br />
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" value="{{ email|default('') }}" required /><br />
+            <label for="password">Password:</label><br />
+            <input type="password" id="password" name="password" required /><br />
+            <label for="confirm_password">Confirm Password:</label><br />
+            <input type="password" id="confirm_password" name="confirm_password" required /><br /><br />
+            <input type="submit" value="Signup" />
+        </form>
+        <p><a href="{{ url_for('home') }}">Back to Home</a></p>
+    </div>
+</body>
+</html>
